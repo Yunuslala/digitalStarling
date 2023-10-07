@@ -1,9 +1,9 @@
 const mongoose=require('mongoose');
 const UserSchema=mongoose.Schema({
-    fulName:String,
+    Name:String,
     password:String,
     email:String,
-    Contact:String
+    mobileNumber:String
 });
 const UserModel=mongoose.model('User',UserSchema);
 

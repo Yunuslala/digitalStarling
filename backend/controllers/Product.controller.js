@@ -5,7 +5,7 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const index = client.initIndex('MyWorldproductIndexs');
 const SearchProducts=async(req,res)=>{
     try {
-        const search=req.query.search;
+        const search=req.query.find;
         console.log("search functional",search)
         const data=await index.search(`${search}`,{
             queryType: 'prefixAll', 
@@ -75,7 +75,7 @@ const AddProduct=async(req,res)=>{
         res.status(500).send({"msg":"something went wrong",error})
     }
 }
-
+// AddProduct()
 const GetAllProduct=async(req,res)=>{
     try {
         const AllProduct=await ProductModel.find();

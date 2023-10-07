@@ -12,6 +12,7 @@ const SignUP=async(req,res)=>{
                 if(hash){
                     const saveData=new UserModel({email,fullName,password:hash,contact});
                     await saveData.save();
+                    console.log(saveData)
                     res.status(201).send({"msg":"User has been signUp",user:saveData});
                 }else{
                     console.log(err)
@@ -39,7 +40,7 @@ const Login=async(req,res)=>{
                     const token = jwt.sign(
                         { userId: FindUser._id,},
                         "Secret",
-                        { expiresIn: "3h" }
+                       
                       );
                     res.status(201).send({"msg":"Login Sucessful",user:FindUser,token})
                 }

@@ -18,8 +18,10 @@ console.log(specs)
 app.use('/e-commerce-api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 app.use("/User",UserRouter);
 app.use("/product",ProductRouter);
-app.use("/Cart",CartRouter)
+app.use("/CartRoute",CartRouter)
 app.use("/Order",OrderRouter);
+
+
 app.listen(process.env.port,async()=>{
     try {
         await connection
